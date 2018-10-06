@@ -236,3 +236,27 @@ def create_fleet(ai_settings, screen, ship, aliens):
         for alien_number in range(number_aliens_x):
             create_alien(ai_settings, screen, aliens, alien_number,
                 row_number)
+
+
+def flip_aliens_1(aliens):
+    for alien in aliens:
+        if alien.row_num == 0 or alien.row_num == 1:
+            alien.image = pygame.image.load('images/Alien1-2.png')
+        elif alien.row_num == 2 or alien.row_num == 3:
+            alien.image = pygame.image.load('images/Alien2-2.png')
+        elif alien.row_num == 4 or alien.row_num == 5:
+            alien.image = pygame.image.load('images/Alien3-2.png')
+        else:
+            alien.image = pygame.image.load('images/AlienMS.png')
+
+def flip_aliens_2(aliens):
+    for alien in aliens:
+        if alien.row_num == 0 or alien.row_num == 1:
+            alien.image = pygame.image.load('images/Alien1.png')
+        elif alien.row_num == 2 or alien.row_num == 3:
+            alien.image = pygame.image.load('images/Alien2.png')
+        elif alien.row_num == 4 or alien.row_num == 5:
+            alien.image = pygame.image.load('images/Alien3.png')
+            alien.image = pygame.image.load('images/Alien3.png')
+        else:
+            alien.image = pygame.image.load('images/AlienMS.png')

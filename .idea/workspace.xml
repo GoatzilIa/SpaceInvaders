@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9125c5c-39eb-4f36-9b21-ad481abc1e6c" name="Default Changelist" comment="Added start screen. Changed the image for the ship and the aliens. Changed the creat_fleet function and settings fo the background color and high score text color.">
+    <list default="true" id="c9125c5c-39eb-4f36-9b21-ad481abc1e6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../SpaceInvaders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvaders/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpaceInvaders/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvaders/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpaceInvaders/game_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvaders/game_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvaders/game_over.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvaders/game_over.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvaders/scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvaders/scoreboard.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,25 +37,25 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1166" />
-          <entry key="txt" value="189" />
+          <entry key="py" value="1746" />
+          <entry key="txt" value="264" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="189" />
-          <entry key="Python" value="1166" />
+          <entry key="PLAIN_TEXT" value="264" />
+          <entry key="Python" value="1746" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="320">
+              <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -80,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SpaceInvaders/alien.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+            <state relative-caret-position="351">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -101,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SpaceInvaders/scoreboard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+            <state relative-caret-position="742">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1538805973733" expanded="true" signature="1294:1303" ph="..." />
@@ -136,10 +134,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SpaceInvaders/game_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1002">
-              <caret line="220" column="60" lean-forward="true" selection-start-line="220" selection-start-column="60" selection-end-line="220" selection-end-column="60" />
+            <state relative-caret-position="180">
+              <caret line="86" column="15" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="15" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+                <marker date="1538810769619" expanded="true" signature="8554:8555" ph="..." />
               </folding>
             </state>
           </provider>
@@ -187,9 +186,12 @@
       <find>update_alie</find>
       <find>update_screen</find>
       <find>p_settings</find>
+      <find>self</find>
+      <find>blitme</find>
     </findStrings>
     <replaceStrings>
       <replace>ai_settings</replace>
+      <replace>alien</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -205,11 +207,11 @@
         <option value="$PROJECT_DIR$/../SpaceInvaders/start_screen.py" />
         <option value="$PROJECT_DIR$/../SpaceInvaders/ship.py" />
         <option value="$PROJECT_DIR$/../SpaceInvaders/settings.py" />
-        <option value="$PROJECT_DIR$/../SpaceInvaders/alien.py" />
-        <option value="$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py" />
         <option value="$PROJECT_DIR$/../SpaceInvaders/game_over.py" />
-        <option value="$PROJECT_DIR$/../SpaceInvaders/game_functions.py" />
         <option value="$PROJECT_DIR$/../SpaceInvaders/scoreboard.py" />
+        <option value="$PROJECT_DIR$/../SpaceInvaders/alien.py" />
+        <option value="$PROJECT_DIR$/../SpaceInvaders/game_functions.py" />
+        <option value="$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py" />
       </list>
     </option>
   </component>
@@ -442,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538788136250</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added titles for the scoreboard. Added a &quot;game over&quot; screen.">
+      <created>1538806045084</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1538806045084</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -454,14 +463,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -492,7 +501,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added start screen. Changed the image for the ship and the aliens. Changed the creat_fleet function and settings fo the background color and high score text color." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added start screen. Changed the image for the ship and the aliens. Changed the creat_fleet function and settings fo the background color and high score text color." />
+    <MESSAGE value="Added titles for the scoreboard. Added a &quot;game over&quot; screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added titles for the scoreboard. Added a &quot;game over&quot; screen." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/chapter_12/restore_points/restore_point_1_ship_moves/alien_invasion.py">
@@ -556,16 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/start_screen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="90" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SpaceInvaders/game_stats.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -583,16 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SpaceInvaders/game_over.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -603,34 +593,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/game_functions.py">
+    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/scoreboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1002">
-          <caret line="220" column="60" lean-forward="true" selection-start-line="220" selection-start-column="60" selection-end-line="220" selection-end-column="60" />
+        <state relative-caret-position="742">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1538805973733" expanded="true" signature="1294:1303" ph="..." />
+            <marker date="1538805973733" expanded="true" signature="2451:2460" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/alien.py">
+    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/start_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+        <state relative-caret-position="132">
+          <caret line="6" column="90" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="90" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/scoreboard.py">
+    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/alien.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        <state relative-caret-position="351">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1538805973733" expanded="true" signature="1294:1303" ph="..." />
-            <marker date="1538805973733" expanded="true" signature="2451:2460" ph="..." />
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/game_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="86" column="15" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1538810769619" expanded="true" signature="8554:8555" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SpaceInvaders/alien_invasion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

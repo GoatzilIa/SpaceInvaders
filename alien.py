@@ -42,7 +42,17 @@ class Alien(Sprite):
         self.x += (self.ai_settings.alien_speed_factor *
                         self.ai_settings.fleet_direction)
         self.rect.x = self.x
+        # if pygame.time.get_ticks() % 10 == 0:
+        #     if self.row_num == 0 or self.row_num == 1:
+        #         self.image = pygame.image.load('images/Alien1-2.png')
+        #     elif self.row_num == 2 or self.row_num == 3:
+        #         self.image = pygame.image.load('images/Alien2-2.png')
+        #     elif self.row_num == 4 or self.row_num == 5:
+        #         self.image = pygame.image.load('images/Alien3-2.png')
+        #     else:
+        #         self.image = pygame.image.load('images/AlienMS.png')
 
     def blitme(self):
         """Draw the alien at its current location."""
         self.screen.blit(self.image, self.rect)
+

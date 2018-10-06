@@ -40,6 +40,11 @@ def run_game():
     # show the game intro
     ss.Start_Screen(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
 
+    # starter tick
+    start_ticks = pygame.time.get_ticks()
+    counter = 1
+    flip = True
+
     # Start the main loop for the game.
     while True:
         gf.check_events(ai_settings, screen, stats, sb, play_button, ship,
@@ -58,7 +63,18 @@ def run_game():
         if stats.ships_left == 0:
             stats.game_active = False
             go.Game_Over(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
+
         # set the fps
-        # clock.tick(144)
+        seconds = int((pygame.time.get_ticks() - start_ticks) / 500)
+        # print (pygame.time.get_ticks())
+
+        if seconds == counter:
+            counter += 1
+            if flip:
+                gf.flip_aliens_1(aliens)
+                flip = False
+            elif not flip:
+                gf.flip_aliens_2(aliens)
+                flip = True
 
 run_game()
