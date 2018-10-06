@@ -8,6 +8,7 @@ from button import Button
 from ship import Ship
 import game_functions as gf
 import start_screen as ss
+import game_over as go
 
 def run_game():
     # Initialize pygame, settings, and screen object.
@@ -54,6 +55,9 @@ def run_game():
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens,
             bullets, play_button)
 
+        if stats.ships_left == 0:
+            stats.game_active = False
+            go.Game_Over(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
         # set the fps
         # clock.tick(144)
 

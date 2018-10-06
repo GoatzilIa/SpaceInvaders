@@ -4,7 +4,7 @@ from pygame.time import Clock
 from button import Button
 import game_functions as gf
 
-def Game_Over(p_settings, screen, stats, sb, play_button, paddles, ball, paddle_right, paddle_tr, paddle_br, clock):
+def Game_Over(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock):
     """creates a start screen"""
     over = True
 
@@ -16,22 +16,20 @@ def Game_Over(p_settings, screen, stats, sb, play_button, paddles, ball, paddle_
         smallerText = pygame.font.Font('freesansbold.ttf', 30)
         Text1Surf, Text1Rect = text_objects("Game Over", largeText)
         Text2Surf, Text2Rect = text_objects("Play Again?", smallText)
+        Text3Surf, Text3Rect = text_objects("Your High Score: ", smallText)
 
-        if stats.ai_score == 5:
-            Text3Surf, Text3Rect = text_objects("AI Won!", smallerText)
-        elif stats.p_score == 5:
-            Text3Surf, Text3Rect = text_objects("You Won!", smallerText)
-
-        Text1Rect.center = ((p_settings.screen_width / 2), (p_settings.screen_height / 20) * 4)
+        Text1Rect.center = ((ai_settings.screen_width / 2), (ai_settings.screen_height / 20) * 4)
         screen.blit(Text1Surf, Text1Rect)
-        Text2Rect.center = ((p_settings.screen_width / 2), (p_settings.screen_height / 20) * 14)
+        Text2Rect.center = ((ai_settings.screen_width / 2), (ai_settings.screen_height / 20) * 14)
         screen.blit(Text2Surf, Text2Rect)
-        Text3Rect.center = ((p_settings.screen_width / 2), (p_settings.screen_height / 20) * 7)
+        Text3Rect.center = ((ai_settings.screen_width / 2), (ai_settings.screen_height / 20) * 7)
         screen.blit(Text3Surf, Text3Rect)
+
+        pygame.mouse.set_visible(True)
 
         # checks if the play button has been pressed
         play_button.draw_button()
-        gf.check_events(p_settings, screen, stats, sb, play_button, paddles, ball, paddle_right, paddle_tr, paddle_br)
+        gf.check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets)
         if stats.game_active:
             over = False
 

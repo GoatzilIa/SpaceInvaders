@@ -12,14 +12,14 @@ class Alien(Sprite):
         self.row_num = row_number
 
         # Load the alien image, and set its rect attribute.
-        if self.row_num == 0:
+        if self.row_num == 0 or self.row_num == 1:
             self.image = pygame.image.load('images/Alien1.png')
         elif self.row_num == 2 or self.row_num == 3:
             self.image = pygame.image.load('images/Alien2.png')
         elif self.row_num == 4 or self.row_num == 5:
             self.image = pygame.image.load('images/Alien3.png')
         else:
-            self.image = pygame.image.load('images/Alien1.png')
+            self.image = pygame.image.load('images/AlienMS.png')
         self.rect = self.image.get_rect()
 
         # Start each new alien near the top left of the screen.
