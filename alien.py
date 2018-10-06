@@ -4,14 +4,22 @@ from pygame.sprite import Sprite
 class Alien(Sprite):
     """A class to represent a single alien in the fleet."""
 
-    def __init__(self, ai_settings, screen):
+    def __init__(self, ai_settings, screen, row_number):
         """Initialize the alien, and set its starting position."""
         super(Alien, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
+        self.row_num = row_number
 
         # Load the alien image, and set its rect attribute.
-        self.image = pygame.image.load('images/alien.bmp')
+        if self.row_num == 0:
+            self.image = pygame.image.load('images/Alien1.png')
+        elif self.row_num == 2 or self.row_num == 3:
+            self.image = pygame.image.load('images/Alien2.png')
+        elif self.row_num == 4 or self.row_num == 5:
+            self.image = pygame.image.load('images/Alien3.png')
+        else:
+            self.image = pygame.image.load('images/Alien1.png')
         self.rect = self.image.get_rect()
 
         # Start each new alien near the top left of the screen.
