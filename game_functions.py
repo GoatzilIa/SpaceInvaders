@@ -75,8 +75,8 @@ def fire_bullet(ai_settings, screen, ship, bullets):
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
 
-def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
-        play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, alienMS, bullets,
+        play_button, seconds, flag):
     """Update images on the screen, and flip to the new screen."""
     # Redraw the screen, each pass through the loop.
     screen.fill(ai_settings.bg_color)
@@ -86,6 +86,11 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
         bullet.draw_bullet()
     ship.blitme()
     aliens.draw(screen)
+
+    update_MS(alienMS, seconds, flag)
+    # if seconds > 10:
+    #     alienMS.blitme()
+    #     alienMS.update()
     
     # Draw the score information.
     sb.show_score()
@@ -152,7 +157,7 @@ def change_fleet_direction(ai_settings, aliens):
         alien.rect.y += ai_settings.fleet_drop_speed
     ai_settings.fleet_direction *= -1
     
-def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
+def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets, alienMS):
     """Respond to ship being hit by alien."""
     if stats.ships_left > 0:
         # Decrement ships_left.
@@ -172,21 +177,23 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
     # Create a new fleet, and center the ship.
     create_fleet(ai_settings, screen, ship, aliens)
     ship.center_ship()
+    alienMS.x = 0 - 2000
+    alienMS.rect.x = alienMS.x
     
     # Pause.
     sleep(0.5)
     
 def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens,
-        bullets):
+        bullets, alienMS):
     """Check if any aliens have reached the bottom of the screen."""
     screen_rect = screen.get_rect()
     for alien in aliens.sprites():
         if alien.rect.bottom >= screen_rect.bottom:
             # Treat this the same as if the ship got hit.
-            ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets)
+            ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets, alienMS)
             break
             
-def update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets):
+def update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets, alienMS):
     """
     Check if the fleet is at an edge,
       then update the postions of all aliens in the fleet.
@@ -196,10 +203,10 @@ def update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets):
     
     # Look for alien-ship collisions.
     if pygame.sprite.spritecollideany(ship, aliens):
-        ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets)
+        ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets, alienMS)
 
     # Look for aliens hitting the bottom of the screen.
-    check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets)
+    check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets, alienMS)
             
 def get_number_aliens_x(ai_settings, alien_width):
     """Determine the number of aliens that fit in a row."""
@@ -257,6 +264,31 @@ def flip_aliens_2(aliens):
             alien.image = pygame.image.load('images/Alien2.png')
         elif alien.row_num == 4 or alien.row_num == 5:
             alien.image = pygame.image.load('images/Alien3.png')
-            alien.image = pygame.image.load('images/Alien3.png')
         else:
             alien.image = pygame.image.load('images/AlienMS.png')
+
+def update_MS(alienMS, seconds, flag):
+    if seconds % 10 == 0:
+        # alienMS.x = 0 - alienMS.rect.width
+        # alienMS.rect.x = alienMS.x
+        # print ("right set to 0")
+        if flag:
+            alienMS.x = 0 - alienMS.rect.width
+            alienMS.rect.x = alienMS.x
+            flag = False
+    if seconds % 10 == 9:
+        flag = True
+
+    if seconds > 10:
+        alienMS.blitme()
+        alienMS.update()
+
+def check_MS_hit(ai_settings, stats, sb, screen, bullets, alienMS):
+    collisions = pygame.sprite.spritecollide(alienMS, bullets, True)
+
+    if collisions:
+        alienMS.x = 0 - 2000
+        alienMS.rect.x = alienMS.x
+        stats.score += ai_settings.MS_points
+        sb.prep_score()
+        check_high_score(stats, sb)

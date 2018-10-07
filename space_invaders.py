@@ -6,6 +6,7 @@ from game_stats import GameStats
 from scoreboard import Scoreboard
 from button import Button
 from ship import Ship
+from alien import Alien
 import game_functions as gf
 import start_screen as ss
 import game_over as go
@@ -31,6 +32,7 @@ def run_game():
     
     # Make a ship, a group of bullets, and a group of aliens.
     ship = Ship(ai_settings, screen)
+    alienMS = Alien(ai_settings, screen, 6)
     bullets = Group()
     aliens = Group()
     
@@ -43,8 +45,10 @@ def run_game():
 
     # starter tick
     start_ticks = pygame.time.get_ticks()
+    seconds = 0
     counter = 1
     flip = True
+    flag = True
 
     # Start the main loop for the game.
     while True:
@@ -56,11 +60,13 @@ def run_game():
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens,
                 bullets)
             gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens,
-                bullets)
+                bullets, alienMS)
+            gf.check_MS_hit(ai_settings, stats, sb, screen, bullets, alienMS)
         
-        gf.update_screen(ai_settings, screen, stats, sb, ship, aliens,
-            bullets, play_button)
+        gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, alienMS,
+            bullets, play_button, seconds, flag)
 
+        # checks if no lives are left and displays the "game over" screen
         if stats.ships_left == 0:
             stats.game_active = False
             go.Game_Over(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
@@ -69,9 +75,6 @@ def run_game():
 
         # keeps track of the seconds the game has been running for
         seconds = int((pygame.time.get_ticks() - start_ticks) / 500)
-
-        # print ("seconds = " + str(seconds))
-        # print ("counter = " + str(counter))
 
         # changes the alien image depending on how long the program has been running (animation)
         if seconds == counter:

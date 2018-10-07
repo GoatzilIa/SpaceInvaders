@@ -37,7 +37,7 @@ def Start_Screen(ai_settings, screen, stats, sb, play_button, ship, aliens, bull
         Image6Surf = pygame.image.load('images/Alien3.png')
         Image6Rect = Image6Surf.get_rect()
 
-        Text7Surf = smallText.render(" = 50 points", True, (255, 255, 255))
+        Text7Surf = smallText.render(" = 1000 points", True, (255, 255, 255))
         Text7Rect = Text7Surf.get_rect()
         Image7Surf = pygame.image.load('images/AlienMS.png')
         Image7Rect = Image7Surf.get_rect()
@@ -57,21 +57,21 @@ def Start_Screen(ai_settings, screen, stats, sb, play_button, ship, aliens, bull
         screen.blit(Image3Surf, Image3Rect)
 
         Text5Rect.center = ((ai_settings.screen_width / 2) + 50, (ai_settings.screen_height / 20) * 9)
-        screen.blit(Text3Surf, Text5Rect)
+        screen.blit(Text5Surf, Text5Rect)
         Image5Rect.centery = Text5Rect.centery
         Image5Rect.centerx = Text5Rect.centerx - 150
         screen.blit(Image5Surf, Image5Rect)
 
         Text6Rect.center = ((ai_settings.screen_width / 2) + 50, (ai_settings.screen_height / 20) * 11)
-        screen.blit(Text3Surf, Text6Rect)
+        screen.blit(Text6Surf, Text6Rect)
         Image6Rect.centery = Text6Rect.centery
         Image6Rect.centerx = Text6Rect.centerx - 150
         screen.blit(Image6Surf, Image6Rect)
 
-        Text7Rect.center = ((ai_settings.screen_width / 2) + 50, (ai_settings.screen_height / 20) * 13)
-        screen.blit(Text3Surf, Text7Rect)
+        Text7Rect.center = ((ai_settings.screen_width / 2) + 70, (ai_settings.screen_height / 20) * 13)
+        screen.blit(Text7Surf, Text7Rect)
         Image7Rect.centery = Text7Rect.centery
-        Image7Rect.centerx = Text7Rect.centerx - 150
+        Image7Rect.centerx = Text7Rect.centerx - 170
         screen.blit(Image7Surf, Image7Rect)
 
         Text4Rect.center = ((ai_settings.screen_width / 2), (ai_settings.screen_height / 20) * 17)
