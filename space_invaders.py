@@ -39,6 +39,7 @@ def run_game():
 
     # show the game intro
     ss.Start_Screen(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
+    # go.Game_Over(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
 
     # starter tick
     start_ticks = pygame.time.get_ticks()
@@ -63,11 +64,16 @@ def run_game():
         if stats.ships_left == 0:
             stats.game_active = False
             go.Game_Over(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
+            seconds = int((pygame.time.get_ticks() - start_ticks) / 500)
+            counter = seconds
 
-        # set the fps
+        # keeps track of the seconds the game has been running for
         seconds = int((pygame.time.get_ticks() - start_ticks) / 500)
-        # print (pygame.time.get_ticks())
 
+        # print ("seconds = " + str(seconds))
+        # print ("counter = " + str(counter))
+
+        # changes the alien image depending on how long the program has been running (animation)
         if seconds == counter:
             counter += 1
             if flip:
