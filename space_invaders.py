@@ -7,6 +7,7 @@ from scoreboard import Scoreboard
 from button import Button
 from ship import Ship
 from alien import Alien
+from bunker import Bunker
 import game_functions as gf
 import start_screen as ss
 import game_over as go
@@ -35,9 +36,11 @@ def run_game():
     alienMS = Alien(ai_settings, screen, 6)
     bullets = Group()
     aliens = Group()
-    
+    bunkers = Group()
+
     # Create the fleet of aliens.
     gf.create_fleet(ai_settings, screen, ship, aliens)
+    gf.create_bunkers(ai_settings, screen, bunkers)
 
     # show the game intro
     ss.Start_Screen(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, clock)
@@ -64,7 +67,7 @@ def run_game():
             gf.check_MS_hit(ai_settings, stats, sb, screen, bullets, alienMS)
         
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, alienMS,
-            bullets, play_button, seconds, flag)
+            bullets, play_button, seconds, flag, bunkers)
 
         # checks if no lives are left and displays the "game over" screen
         if stats.ships_left == 0:

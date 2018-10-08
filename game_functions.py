@@ -5,6 +5,7 @@ import pygame
 
 from bullet import Bullet
 from alien import Alien
+from bunker import Bunker
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
     """Respond to keypresses."""
@@ -76,7 +77,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
         bullets.add(new_bullet)
 
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, alienMS, bullets,
-        play_button, seconds, flag):
+        play_button, seconds, flag, bunkers):
     """Update images on the screen, and flip to the new screen."""
     # Redraw the screen, each pass through the loop.
     screen.fill(ai_settings.bg_color)
@@ -88,9 +89,8 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, alienMS, bullets
     aliens.draw(screen)
 
     update_MS(alienMS, seconds, flag)
-    # if seconds > 10:
-    #     alienMS.blitme()
-    #     alienMS.update()
+    for bunker in bunkers:
+        bunker.blitme()
     
     # Draw the score information.
     sb.show_score()
@@ -292,3 +292,42 @@ def check_MS_hit(ai_settings, stats, sb, screen, bullets, alienMS):
         stats.score += ai_settings.MS_points
         sb.prep_score()
         check_high_score(stats, sb)
+
+
+def create_bunkers(ai_settings, screen, bunkers):
+    """Create a full fleet of aliens."""
+    # Create an alien, and find number of aliens in a row.
+    bunker1 = Bunker(ai_settings, screen)
+    bunker1.rect.centerx = ai_settings.screen_width / 6
+    bunker1.rect.centery = ai_settings.screen_height / 10 * 9
+    bunker1.x = bunker1.rect.x
+    bunker1.y = bunker1.rect.y
+    bunkers.add(bunker1)
+
+    bunker2 = Bunker(ai_settings, screen)
+    bunker2.rect.centerx = ai_settings.screen_width / 6 * 2
+    bunker2.rect.centery = ai_settings.screen_height / 10 * 9
+    bunker2.x = bunker2.rect.x
+    bunker2.y = bunker2.rect.y
+    bunkers.add(bunker2)
+
+    bunker3 = Bunker(ai_settings, screen)
+    bunker3.rect.centerx = ai_settings.screen_width / 6 * 3
+    bunker3.rect.centery = ai_settings.screen_height / 10 * 9
+    bunker3.x = bunker3.rect.x
+    bunker3.y = bunker3.rect.y
+    bunkers.add(bunker3)
+
+    bunker4 = Bunker(ai_settings, screen)
+    bunker4.rect.centerx = ai_settings.screen_width / 6 * 4
+    bunker4.rect.centery = ai_settings.screen_height / 10 * 9
+    bunker4.x = bunker4.rect.x
+    bunker4.y = bunker4.rect.y
+    bunkers.add(bunker4)
+
+    bunker5 = Bunker(ai_settings, screen)
+    bunker5.rect.centerx = ai_settings.screen_width / 6 * 5
+    bunker5.rect.centery = ai_settings.screen_height / 10 * 9
+    bunker5.x = bunker5.rect.x
+    bunker5.y = bunker5.rect.y
+    bunkers.add(bunker5)
